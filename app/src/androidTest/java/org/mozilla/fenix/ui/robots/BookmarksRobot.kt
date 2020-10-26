@@ -164,7 +164,7 @@ class BookmarksRobot {
 
     fun saveEditBookmark() {
         saveBookmarkButton().click()
-        mDevice.waitNotNull(Until.findObject(text("Bookmarks")))
+        mDevice.findObject(UiSelector().resourceId("R.id.bookmark_list")).waitForExists(waitingTime)
     }
 
     fun clickParentFolderSelector() = bookmarkFolderSelector().click()
